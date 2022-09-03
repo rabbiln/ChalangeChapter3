@@ -1,8 +1,8 @@
 import utils.IOUtils
 
-class App{
+class App {
 
-    private fun run() {
+    fun run() {
         printHeader()
         inputPlayer()
     }
@@ -14,12 +14,14 @@ class App{
         }
     }
 
-    private fun printHeader() {
-
-        println("terminal:~terminal$")
-        println("==========================")
-        println("GAME SUIT TERMINAL VERSION")
-        println("==========================")
+   private fun printHeader() {
+        println("""
+            terminal:~terminal
+            ==========================
+            GAME SUIT TERMINAL VERSION
+            ==========================
+            pilih antara batu, gunting dan kertas
+        """.trimIndent())
     }
 
     private fun inputPlayer() {
@@ -27,28 +29,27 @@ class App{
         val inputPlayer1 = IOUtils.readString()
         println("Masukkan Pemain 2 : ")
         val inputPlayer2 = IOUtils.readString()
-
         println("Masukkan pemain 1 : $inputPlayer1")
         println("Masukkan pemain 2 : $inputPlayer2")
-        if (inputPlayer1 == "gunting" && inputPlayer2 == "batu"){
+        if (inputPlayer1 == "gunting" && inputPlayer2 == "batu") {
             println("Pemain 2 MENANG!")
         }
-        if (inputPlayer1 == "batu" && inputPlayer2 == "gunting"){
+        if (inputPlayer1 == "batu" && inputPlayer2 == "gunting") {
             println("Pemain 1 MENANG!")
         }
-        if (inputPlayer1 == "kertas" && inputPlayer2 == "gunting"){
+        if (inputPlayer1 == "kertas" && inputPlayer2 == "gunting") {
             println("Pemain 2 MENANG!")
         }
-        if (inputPlayer1 == "gunting" && inputPlayer2 == "kertas"){
+        if (inputPlayer1 == "gunting" && inputPlayer2 == "kertas") {
             println("Pemain 1 MENANG!")
         }
-        if (inputPlayer1 == "kertas" && inputPlayer2 == "batu"){
+        if (inputPlayer1 == "kertas" && inputPlayer2 == "batu") {
             println("Pemain 1 MENANG!")
         }
-        if (inputPlayer1 == "batu" && inputPlayer2 == "kertas"){
+        if (inputPlayer1 == "batu" && inputPlayer2 == "kertas") {
             println("Pemain 2 MENANG!")
         }
-        if (inputPlayer1 == inputPlayer2){
+        if (inputPlayer1 == inputPlayer2) {
             println("DRAW!")
         }
     }
